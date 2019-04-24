@@ -1,13 +1,16 @@
 import React from "react";
+import indigo from '@material-ui/core/colors/indigo';
+import color from "@material-ui/core/colors/orange";
 
-
-
+const primary = indigo[300];
 
 function logins(){
     return ( 
-      <body style={{backgroundImage:'url(https://www.arrayanesalamos.edu.ec/themes/themes_configuration/images/images/login/fondo.png)',backgroundSize:'100%'}}>
+      // <body style={{backgroundImage:'url(https://www.arrayanesalamos.edu.ec/themes/themes_configuration/images/images/login/fondo.png)',backgroundSize:'100%'}}>
+      <body style ={{backgroundColor: primary }}>
     <div class='container' >
-      
+
+    
       
     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
         <div class='jumbotron' style={{marginTop:'50px'}}>
