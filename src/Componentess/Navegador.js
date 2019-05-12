@@ -1,16 +1,12 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import logins from './paginas/login';
 import inicio from './paginas/inicio';
+import {Navbar,Nav,Button,Form,FormControl} from 'react-bootstrap';
 
 
-function Index() {
-  return <h2>Home</h2>;
-}
 
-function About() {
-  return <h2>About</h2>;
-}
+
 
 function Users() {
   return <h2>Users</h2>;
@@ -24,65 +20,32 @@ class Navegador extends Component{
   
   render(){
     return(
-      <Router>
-      <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
-        <h2 class='navbar-brand'>UADE CINE</h2>
-          
-          
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-  
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
       
-        <Link class='nav-link' to='/'>Inicio</Link>
-          
-      
-      </li>
-      <li class="nav-item">
-      
-        <Link class='nav-link' to='/series'>Series y peliculas</Link>
-          
+
+
+<Router>
+<Navbar bg="light" expand="lg">
+  <Navbar.Brand>UADE CINE</Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
+      <Nav.Link href='/'>Inicio</Nav.Link>
+      <Nav.Link href='/series'>Series y peliculas</Nav.Link>
+      <Nav.Link href='/calificadas'>Calificadas</Nav.Link>
+      <Nav.Link  href='/login'>Iniciar sesion</Nav.Link>
      
-      </li>
-      <li class="nav-item">
-      
-        <Link class='nav-link' to='/calificadas'>Calificadas</Link>
-          
-      
-      </li>
-      <li class="nav-item">
-      
-        <Link class='nav-link'  to='/login'>Iniciar sesion</Link>
-          
-      
-      </li>
-
-    </ul>
-    
-   
-
-
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-  
-</nav>
+    </Nav>
+    <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-success">Search</Button>
+    </Form>
+  </Navbar.Collapse>
+</Navbar>
 <Route path='/' exact component={inicio}/>
 <Route path='/series' component={Users}/>
 <Route path='/calificadas' component={nueva}/>
 <Route path='/login' component={logins}/>
-
-
-</div>
- </Router>
-
+</Router>
 
 
     )

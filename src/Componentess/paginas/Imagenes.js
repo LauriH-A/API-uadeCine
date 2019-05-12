@@ -83,13 +83,13 @@ class Imagen extends Component{
               
               <p>Calificacion <select name="seleccion" id="seleccion" value={this.state.seleccion} onChange={this.onChange.bind(this)} >
               <option value="value1">1</option> 
-  <option value="value2" selected>2</option>
+  <option value="value2" >2</option>
   <option value="value3">3</option>
   <option value="value4">4</option> 
-  <option value="value5" selected>5</option>
+  <option value="value5" >5</option>
   <option value="value6">6</option>
   <option value="value7">7</option> 
-  <option value="value8" selected>8</option>
+  <option value="value8" >8</option>
   <option value="value9">9</option>
   <option value="value10">10</option> 
   
