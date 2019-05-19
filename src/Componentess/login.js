@@ -1,7 +1,7 @@
 import React from "react";
 import indigo from '@material-ui/core/colors/indigo';
-import color from "@material-ui/core/colors/orange";
-import { Container ,Form, Button} from "react-bootstrap";
+
+import { Container ,Form, Button,Input} from "react-bootstrap";
 import {Row,Col} from 'react-flexbox-grid';
 
 const primary = indigo[300];
@@ -10,11 +10,14 @@ function logins(){
     return ( 
       
     <Container>
+
     <Row>
     
-      <Col xl='3' lg='3' md='4' sm='6' xs='12'>
+      <Col>
+      
       <Form>
-  <Form.Group controlId="formBasicEmail" style={}>
+      
+  <Form.Group controlId="formBasicEmail">
     <Form.Label>Usuario</Form.Label>
     <Form.Control type="email" placeholder="Ingrese usuario" />
     <Form.Text className="text-muted">
@@ -24,12 +27,12 @@ function logins(){
 
   <Form.Group controlId="formBasicPassword">
     <Form.Label>Contraseña</Form.Label>
-    <Form.Control type="password" placeholder="Ingrese contraseña" />
+    <Form.Control type="password" placeholder="Ingrese contraseña"/>
   </Form.Group>
   <Form.Group controlId="formBasicChecbox">
     <Form.Check type="checkbox" label="Recordarme" />
   </Form.Group>
-  <Button variant="primary" type="submit">
+  <Button variant="primary" type="submit" style={{margin:'10px'}}>
     Ingresar
   </Button>
   <Button variant="primary" type="submit">

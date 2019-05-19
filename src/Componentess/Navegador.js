@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route} from "react-router-dom";
-import logins from './paginas/login';
-import inicio from './paginas/inicio';
-import {Navbar,Nav,Button,Form,FormControl} from 'react-bootstrap';
-
+import logins from './login';
+import inicio from './inicio';
+import {Navbar,Nav,Button,FormControl,Form} from 'react-bootstrap';
+import BuscarPeliculas from './BuscarPeliculas';
 
 
 
@@ -17,6 +17,11 @@ function nueva() {
 
 
 class Navegador extends Component{
+  
+  
+	
+
+  
   
   render(){
     return(
@@ -32,12 +37,13 @@ class Navegador extends Component{
       <Nav.Link href='/'>Inicio</Nav.Link>
       <Nav.Link href='/series'>Series y peliculas</Nav.Link>
       <Nav.Link href='/calificadas'>Calificadas</Nav.Link>
-      <Nav.Link  href='/login'>Iniciar sesion</Nav.Link>
+     
      
     </Nav>
     <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
+    <Nav className="mr-auto">
+      <Nav.Link  href='/login'>Iniciar sesion</Nav.Link>
+      </Nav>
     </Form>
   </Navbar.Collapse>
 </Navbar>

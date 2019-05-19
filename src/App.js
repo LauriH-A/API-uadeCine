@@ -9,15 +9,17 @@ import Navegador from './Componentess/Navegador';
 
 
 
+
+
 class App extends Component{
   
   render(){
 
   
     return (
-      <div><Navegador/></div>
-      
-    
+      <div>
+      <Navegador/>
+			</div>
       
     );
   }
