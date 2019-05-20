@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import logins from './login';
 import inicio from './inicio';
-import {Navbar,Nav,Button,FormControl,Form} from 'react-bootstrap';
-import BuscarPeliculas from './BuscarPeliculas';
+import {Navbar,Nav,Form} from 'react-bootstrap';
+
 
 
 

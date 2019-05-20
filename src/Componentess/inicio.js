@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import GrillaPeliculas from './GrillaPeliculas';
 import BuscarPeliculas from './BuscarPeliculas';
-import Navegador from './Navegador';
-import {Container,Row,Col,Form,Button,ButtonToolbar,InputGroup,FormControl,ButtonGroup} from 'react-bootstrap';
+
+import {Container,Row,Col,Button,ButtonToolbar,InputGroup,FormControl,ButtonGroup} from 'react-bootstrap';
 
 
 
@@ -15,7 +15,7 @@ class inicio extends Component
 		super();
 		this.state = { 
 			grilla : [],
-			cajaTexto : " ",
+			cajaTexto : "",
 		}	
 		//linkear funciones
 		this.ejecutarBusqueda = this.ejecutarBusqueda.bind(this);
@@ -25,24 +25,25 @@ class inicio extends Component
   
 	}
   
-  actualizar(nuevoTitulo){
-    console.log(nuevoTitulo.target.value)
-    this.setState({cajaTexto : nuevoTitulo.target.value});
-    
-    
   
-	}
+	
 
 	componentDidMount()
 	{
 		BuscarPeliculas.invocarPeliculas("Harry",this.okBusquedaPeli,this.failBusqueda);
 	}
+	actualizar(nuevoTitulo){
+    console.log(nuevoTitulo.target.value)
+    this.setState({cajaTexto : nuevoTitulo.target.value});
+	}
+    
+  
 	
 	
 	ejecutarBusqueda()
 	{
 		console.log("entre a buscar");
-		BuscarPeliculas.invocarPeliculas("toy",this.okBusquedaPeli,this.failBusqueda);
+		BuscarPeliculas.invocarPeliculas(this.state.cajaTexto,this.okBusquedaPeli,this.failBusqueda);
 		
 	}
 	
@@ -67,7 +68,7 @@ class inicio extends Component
 				<Container>
       <Row  >
       <Col xl={3} lg={3} md={4} sm={6} xs={12}  >
-	  <ButtonToolbar >
+	  <ButtonToolbar style={{marginTop:'15px',marginBottom:'15px'}}>
     
     <InputGroup>
      
@@ -76,7 +77,7 @@ class inicio extends Component
         placeholder="Buscar..."
         aria-label="Input group example"
         aria-describedby="btnGroupAddon"
-		value={this.state.cajaTexto} onChange={this.actualizar} style={{width:'195px'}}
+		value={this.state.cajaTexto} onChange={this.actualizar} style={{width:'190px'}}
       />
     </InputGroup>
     <ButtonGroup className="mr-2" aria-label="First group">      <Button variant="secondary" onClick={this.ejecutarBusqueda}>Buscar</Button>
