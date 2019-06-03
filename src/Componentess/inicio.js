@@ -3,7 +3,7 @@ import GrillaPeliculas from './GrillaPeliculas';
 import BuscarPeliculas from './BuscarPeliculas';
 
 import {Container,Row,Col,Button,ButtonToolbar,InputGroup,FormControl,ButtonGroup} from 'react-bootstrap';
-
+import {Grid} from '@material-ui/core'
 
 
  
@@ -65,9 +65,7 @@ class inicio extends Component
 		
 		render(){
 			return(	
-				<Container>
-      <Row  >
-      <Col xl={3} lg={3} md={4} sm={6} xs={12}  >
+				<form>
 	  <ButtonToolbar style={{marginTop:'15px',marginBottom:'15px'}}>
     
     <InputGroup>
@@ -84,7 +82,7 @@ class inicio extends Component
       
     </ButtonGroup>
   </ButtonToolbar>
-				<GrillaPeliculas grilla={this.state.grilla}></GrillaPeliculas></Col></Row></Container>
+				<GrillaPeliculas grilla={this.state.grilla}></GrillaPeliculas></form>
 			)
 		}
 			
