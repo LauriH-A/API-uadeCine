@@ -14,6 +14,7 @@ class inicio extends Component
 	{
 		super();
 		this.state = { 
+			
 			grilla : [],
 			cajaTexto : "",
 		}	

@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {Grid,CardActionArea,CardMedia,CardContent,Typography,CardActions,Card,Button} from '@material-ui/core'
+import {Modal} from 'react-bootstrap'
+import BotonCalificar from './BotonCalificar';
+
 
 
 const styles = theme => ({
@@ -23,26 +26,30 @@ const styles = theme => ({
     maxWidth: 345,
   },
   media: {
-    height: 450,
+    height: 550,
   },
 });
 
 
 
+
 function GrillaPeliculas(props) {
-  
+ 
 
   const { classes } = props;
   console.log("props",props);
   
    //console.log("tileDAta", tileData); 
    const tileData = props.grilla;
-   
-    
+  
+  
   
    return (
+    
+    
 
     <div className={classes.root}>
+    
       <Grid container className={classes.gridList}>
         {tileData.map(tile => (
           <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -63,12 +70,7 @@ function GrillaPeliculas(props) {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button size="small" color="primary">
-                Calificar
-              </Button>
-              <Button size="small" color="primary">
-                Comentarios
-              </Button>
+              <BotonCalificar/>
             </CardActions>
             </Card>
           </Grid>
