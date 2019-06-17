@@ -35,7 +35,7 @@ class Navegador extends Component{
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href='/'>Inicio</Nav.Link>
-      <Nav.Link href='/series'>Series y peliculas</Nav.Link>
+      
       <Nav.Link href='/calificadas'>Calificadas</Nav.Link>
      
      
@@ -48,7 +48,7 @@ class Navegador extends Component{
   </Navbar.Collapse>
 </Navbar>
 <Route path='/' exact component={inicio}/>
-<Route path='/series' component={Users}/>
+
 <Route path='/calificadas' component={nueva}/>
 <Route path='/login' component={logins}/>
 </Router>
