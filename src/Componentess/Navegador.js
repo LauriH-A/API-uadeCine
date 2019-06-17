@@ -42,7 +42,7 @@ class Navegador extends Component{
     </Nav>
     <Form inline>
     <Nav className="mr-auto">
-      <Nav.Link  href='/login'>Iniciar sesion</Nav.Link>
+      <Nav.Link  href='/login' >Iniciar sesion</Nav.Link>
       </Nav>
     </Form>
   </Navbar.Collapse>

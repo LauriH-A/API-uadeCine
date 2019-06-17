@@ -1,10 +1,10 @@
 import React from "react";
 import indigo from '@material-ui/core/colors/indigo';
-
+import BotonRegisto from './BotonRegisto'
 import { Container ,Form, Button,Input} from "react-bootstrap";
 import {Row,Col} from 'react-flexbox-grid';
+import BotonRegistro from "./BotonRegisto";
 
-const primary = indigo[300];
 
 function logins(){
     return ( 
@@ -15,29 +15,22 @@ function logins(){
     
       <Col>
       
-      <Form>
-      
+      <Form style={{padding:"10px 30px"}}>
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Usuario</Form.Label>
-    <Form.Control type="email" placeholder="Ingrese usuario" />
-    <Form.Text className="text-muted">
-      
-    </Form.Text>
+    <Form.Control type="email" placeholder="Usuario..." />
+    
   </Form.Group>
 
   <Form.Group controlId="formBasicPassword">
     <Form.Label>Contraseña</Form.Label>
-    <Form.Control type="password" placeholder="Ingrese contraseña"/>
+    <Form.Control type="password" placeholder="Contraseña..." />
   </Form.Group>
-  <Form.Group controlId="formBasicChecbox">
-    <Form.Check type="checkbox" label="Recordarme" />
-  </Form.Group>
-  <Button variant="primary" type="submit" style={{margin:'10px'}}>
+  
+  <Button variant="primary" type="submit" style={{margin:"10px"}}>
     Ingresar
   </Button>
-  <Button variant="primary" type="submit">
-    Registrarse
-  </Button>
+  <BotonRegisto/>
 </Form>
       </Col>
     </Row>
