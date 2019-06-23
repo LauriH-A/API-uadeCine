@@ -1,12 +1,8 @@
 import  React,{Component } from "react";
 import {Button} from '@material-ui/core'
 import ApiController from '../Controller/ApiController'
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import {M } from 'materialize-css'
-import DialogTitle from '@material-ui/core/DialogTitle';
-import {InputGroup,Form,Modal} from 'react-bootstrap'
+
+import {Form,Modal} from 'react-bootstrap'
 
 class BotonRegisto extends Component{
     constructor(props){
@@ -29,12 +25,13 @@ class BotonRegisto extends Component{
     crearContacto=(e)=>{
       console.log("nombre",this.state.nombre);
       let data = {
+          idUsuario:this.state.idUsuario,
           nombre : this.state.nombre,
           apellido : this.state.apellido,
           mail : this.state.mail,
           dni : this.state.dni,
           contraseña : this.state.contraseña,
-          idUsuario:this.state.idUsuario
+          
       };
       ApiController.insertContacto(data);
       e.preventDefault();
@@ -133,7 +130,7 @@ class BotonRegisto extends Component{
 </Form>
 </Modal>
         
-            <Button onClick={this.handleClickOpen.bind(this)} style={{color:"white", background:"black"}} variant="primary" >
+            <Button onClick={this.handleClickOpen.bind(this)} style={{color:"white", background:"black"}}  >
                 Registrarse
               </Button>
               

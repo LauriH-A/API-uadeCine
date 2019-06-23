@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import {Grid,CardActionArea,CardMedia,CardContent,Typography,CardActions,Card,Button} from '@material-ui/core'
-import {Modal} from 'react-bootstrap'
+import {Grid,CardActionArea,CardMedia,CardContent,Typography,CardActions,Card} from '@material-ui/core'
+
 import BotonCalificar from './BotonCalificar';
 
 

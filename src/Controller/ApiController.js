@@ -1,11 +1,13 @@
-import {Component} from 'react';
-
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom'; 
 const url ="http://localhost:8080/contacto";
 const urlGetContactos="/leerContacto";
 const urlGetContactosById="/leerContacto/idBusqueda";
 const urlInsertContacto="/insertarContacto/Contacto";
 const urlUpdateContacto='/modificarContacto/Contacto';
 const urlDeleteContacto='/borrarContacto/Contacto';
+
 
 class ApiController extends Component
 {
@@ -42,11 +44,12 @@ class ApiController extends Component
             
             return response.json();
         }).then (responseData => {
-                console.log(responseData);
-            
+                console.log(responseData)
+                return responseData
                 //console.log("Recibi datos");
                 
         });
+        
     }
     insertContacto(data)
     {

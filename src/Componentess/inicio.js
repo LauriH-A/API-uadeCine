@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import GrillaPeliculas from './GrillaPeliculas';
 import BuscarPeliculas from './BuscarPeliculas';
 
-import {Container,Row,Col,Button,ButtonToolbar,InputGroup,FormControl,ButtonGroup} from 'react-bootstrap';
-import {Grid} from '@material-ui/core'
+import {Button,ButtonToolbar,InputGroup,FormControl,ButtonGroup} from 'react-bootstrap';
+
 
 
  
-class inicio extends Component 
+class Inicio extends Component 
 {
  
 	constructor ()
@@ -93,6 +93,6 @@ class inicio extends Component
 
 
 
-export default inicio;
+export default Inicio;
 
 

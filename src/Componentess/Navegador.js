@@ -7,10 +7,6 @@ import {Navbar,Nav,Form} from 'react-bootstrap';
 
 
 
-
-function Users() {
-  return <h2>Users</h2>;
-}
 function nueva() {
   return <h2>Users</h2>;
 }
