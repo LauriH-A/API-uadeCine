@@ -30,7 +30,7 @@ ingresar=(e)=>{
         idUsuario:this.state.idUsuario,
         contraseña:this.state.contraseña
       }
-      console.log(ApiController.getContactosById(data));
+      ApiController.getContactosById(data);
       
       
       this.setState({idUsuario:"",contraseña:""})

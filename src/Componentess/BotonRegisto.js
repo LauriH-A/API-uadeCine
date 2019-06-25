@@ -122,9 +122,7 @@ class BotonRegisto extends Component{
 
   
 
-  <Button  type="submit" onClick={this.handleClose.bind(this)}>
-    Cerrar
-  </Button>
+ 
 
   <Button  type="submit" onClick={this.crearContacto.bind(this)}>
     Registrarse
