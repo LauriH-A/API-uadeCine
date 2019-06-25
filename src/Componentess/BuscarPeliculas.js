@@ -1,5 +1,5 @@
-import {Component} from 'react';
-import imagenSinLogo from '../Imagenes/sinPoster.jpg';
+import  {Component} from 'react';
+import imagenSinLogo from '../imagenes/sinPoster.jpg';
 
 const url ="http://www.omdbapi.com/?i=tt3896198&apikey=";
 const apiKEY="d0b64143";
