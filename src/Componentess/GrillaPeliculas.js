@@ -70,7 +70,7 @@ function GrillaPeliculas(props) {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <BotonCalificar/>
+              <BotonCalificar pelicula={tile.title}/>
             </CardActions>
             </Card>
           </Grid>
