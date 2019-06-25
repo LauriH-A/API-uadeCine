@@ -7,7 +7,8 @@ const urlGetContactosById="/leerContacto/idBusqueda";
 const urlInsertContacto="/insertarContacto/Contacto";
 const urlUpdateContacto='/modificarContacto/Contacto';
 const urlDeleteContacto='/borrarContacto/Contacto';
-
+const urlInsertComentario="/insertarComentario/Comentario"
+let inicia=false;
 
 class ApiController extends Component
 {
@@ -31,8 +32,9 @@ class ApiController extends Component
         });
     }
     getContactosById(data)
-    {
+    {   
         const endpoint = `${url}${urlGetContactosById}`;
+        
         //console.log("Buscando")
         console.log(data);
        fetch(endpoint,{
@@ -40,15 +42,25 @@ class ApiController extends Component
             mode: "cors",
             headers:{ 'Content-Type': 'application/json'},
             body: JSON.stringify(data) // data can be `string` or {object}!
-        }).then ((response) => {
+        })
+        .then ((response) => {
             
             return response.json();
         }).then (responseData => {
-                console.log(responseData)
-                return responseData
-                //console.log("Recibi datos");
-                
-        });
+            console.log(responseData)
+            
+        })
+        ;
+
+        
+
+
+        
+       
+        
+        
+        
+        
         
     }
     insertContacto(data)
@@ -57,6 +69,26 @@ class ApiController extends Component
         
         
         const endpoint = `${url}${urlInsertContacto}`;
+        console.log("Guardando");
+            fetch (endpoint,{
+            method:'POST',
+            mode:"cors",
+            headers:{'Content-Type': 'application/json'},
+            body:JSON.stringify(data)
+        }).then ((response) => {
+            console.log("response");
+            console.log(response);
+            return response.json();
+        })
+        
+    }
+
+    insertComentario(data)
+    {
+        console.log("guardo comentario",data);
+        
+        
+        const endpoint = `${url}${urlInsertComentario}`;
         console.log("Guardando");
             fetch (endpoint,{
             method:'POST',
