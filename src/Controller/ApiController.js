@@ -1,12 +1,15 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom'; 
+import {Component} from 'react';
+
 const url ="http://localhost:8080/contacto";
 const urlGetContactos="/leerContacto";
 const urlGetContactosById="/leerContacto/idBusqueda";
 const urlInsertContacto="/insertarContacto/Contacto";
 const urlUpdateContacto='/modificarContacto/Contacto';
 const urlDeleteContacto='/borrarContacto/Contacto';
+<<<<<<< HEAD
+=======
+const urlInsertComentario="/insertarComentario/Comentario"
+>>>>>>> 4434eb3e71af166b464d4d62dd6cdbb84db8db2f
 
 
 class ApiController extends Component
