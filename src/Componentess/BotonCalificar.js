@@ -13,7 +13,7 @@ class BotonCalificar extends Component{
         super(props);
         this.state={
             open:false,
-            comentarios:"",
+            comentario:"",
             calificacion:"",
             idPelicula:""
         }
@@ -23,7 +23,7 @@ class BotonCalificar extends Component{
       console.log("nombre",this.state.nombre);
       let data = {
           idUsuario:"Silvina18",
-          comentario : this.state.comentarios,
+          comentario : this.state.comentario,
           calificacion : this.state.calificacion,
           idPelicula : this.props.pelicula
           
@@ -34,7 +34,7 @@ class BotonCalificar extends Component{
       alert("Comentario subido con exito...")    
       this.setState({
             open:false,
-            comentarios:"",
+            comentario:"",
             calificacion:"",
             idPelicula:""
             
@@ -42,9 +42,9 @@ class BotonCalificar extends Component{
     }
     comentario=(e)=>{
       this.setState({
-        comentarios:e.target.value
+        comentario:e.target.value
       })
-      console.log(this.state.comentarios)
+      console.log(this.state.comentario)
     }
     calificacion=(e)=>{
       this.setState({
@@ -75,7 +75,7 @@ class BotonCalificar extends Component{
       <InputGroup.Text id="basic-addon1">Comentarios</InputGroup.Text>
     </InputGroup.Prepend>
     <FormControl
-      onChange={this.state.comentario}
+      onChange={this.comentario.bind(this)}
       aria-label="Comentarios..."
       aria-describedby="basic-addon1"
     />

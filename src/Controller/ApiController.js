@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom'; 
+import {Component} from 'react';
+
 const url ="http://localhost:8080/contacto";
 const urlGetContactos="/leerContacto";
 const urlGetContactosById="/leerContacto/idBusqueda";
@@ -8,7 +7,7 @@ const urlInsertContacto="/insertarContacto/Contacto";
 const urlUpdateContacto='/modificarContacto/Contacto';
 const urlDeleteContacto='/borrarContacto/Contacto';
 const urlInsertComentario="/insertarComentario/Comentario"
-let inicia=false;
+
 
 class ApiController extends Component
 {
