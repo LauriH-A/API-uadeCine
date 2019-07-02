@@ -18,31 +18,6 @@ class BotonCalificar extends Component{
         }
     }
     
-<<<<<<< HEAD
-=======
-    guardar=(e)=>{
-      console.log("nombre",this.state.nombre);
-      console.log("usuario",localStorage.getItem('usuarioLogueado'))
-      let data = {
-          idUsuario:localStorage.getItem('usuarioLogueado'),
-          comentario : this.state.comentario,
-          calificacion : this.state.calificacion,
-          idPelicula : this.props.pelicula
-          
-          
-      };
-      ApiController.insertComentario(data);
-      e.preventDefault();
-      alert("Comentario subido con exito...")    
-      this.setState({
-            open:false,
-            comentario:"",
-            calificacion:"",
-            idPelicula:""
-            
-      })
-    }
->>>>>>> 4434eb3e71af166b464d4d62dd6cdbb84db8db2f
     comentario=(e)=>{
       this.setState({
         comentario:e.target.value
@@ -72,11 +47,7 @@ class BotonCalificar extends Component{
       <InputGroup.Text id="basic-addon1">Comentarios</InputGroup.Text>
     </InputGroup.Prepend>
     <FormControl
-<<<<<<< HEAD
       onChange={this.comentario}
-=======
-      onChange={this.comentario.bind(this)}
->>>>>>> 4434eb3e71af166b464d4d62dd6cdbb84db8db2f
       aria-label="Comentarios..."
       aria-describedby="basic-addon1"
     />

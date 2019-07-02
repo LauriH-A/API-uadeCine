@@ -62,7 +62,7 @@ class BuscarPeliculas extends Component
             return response.json();
         }).then (responseData => {
             console.log("response peliculas",responseData);
-            
+            if(responseData.Search!==undefined){
             var i,newArray = [];
             for (i = 0; i < responseData.Search.length; i++) 
             {
@@ -72,7 +72,9 @@ class BuscarPeliculas extends Component
                
                 okBusqueda(newArray)
           
-          
+        }else{
+            failBusqueda()
+        }
           
         });
     }
