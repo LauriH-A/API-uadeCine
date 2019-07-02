@@ -1,6 +1,6 @@
 import  React,{Component } from "react";
 import {Button} from '@material-ui/core'
-import ApiController from '../Controller/ApiController'
+
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -9,16 +9,17 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import {InputGroup,FormControl} from 'react-bootstrap'
 
 class BotonCalificar extends Component{
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state={
             open:false,
             comentario:"",
             calificacion:"",
-            idPelicula:""
         }
     }
     
+<<<<<<< HEAD
+=======
     guardar=(e)=>{
       console.log("nombre",this.state.nombre);
       console.log("usuario",localStorage.getItem('usuarioLogueado'))
@@ -41,17 +42,12 @@ class BotonCalificar extends Component{
             
       })
     }
+>>>>>>> 4434eb3e71af166b464d4d62dd6cdbb84db8db2f
     comentario=(e)=>{
       this.setState({
         comentario:e.target.value
       })
       console.log(this.state.comentario)
-    }
-    calificacion=(e)=>{
-      this.setState({
-        calificacion:e.target.value
-      })
-      console.log(this.state.calificacion)
     }
 
     handleClickOpen = () => {
@@ -76,7 +72,11 @@ class BotonCalificar extends Component{
       <InputGroup.Text id="basic-addon1">Comentarios</InputGroup.Text>
     </InputGroup.Prepend>
     <FormControl
+<<<<<<< HEAD
+      onChange={this.comentario}
+=======
       onChange={this.comentario.bind(this)}
+>>>>>>> 4434eb3e71af166b464d4d62dd6cdbb84db8db2f
       aria-label="Comentarios..."
       aria-describedby="basic-addon1"
     />
@@ -85,7 +85,7 @@ class BotonCalificar extends Component{
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">Calificacion</label>
   </div>
-  <select class="custom-select" id="inputGroupSelect01" onClick={this.calificacion.bind(this)} onChange={this.state.calificacion}>
+  <select class="custom-select" id="inputGroupSelect01" >
     <option selected>Elegir...</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -105,7 +105,7 @@ class BotonCalificar extends Component{
             <Button onClick={this.handleClose} color="primary">
               Cancelar
             </Button>
-            <Button onClick={this.guardar.bind(this)} color="primary" >
+            <Button onClick={this.handleUpdate} color="primary" >
               Guardar
             </Button>
           </DialogActions>
