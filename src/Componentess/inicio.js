@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import GrillaPeliculas from './GrillaPeliculas';
 import BuscarPeliculas from './BuscarPeliculas';
-
+import ReactDOM from 'react-dom';
 import {Button,ButtonToolbar,InputGroup,FormControl,ButtonGroup} from 'react-bootstrap';
-
+import Error from './Error404'
 
 
  
 class Inicio extends Component 
 {
  
-	constructor ()
+	constructor (props)
 	{
-		super();
+		super(props);
 		this.state = { 
 			
 			grilla : [],
@@ -57,7 +57,9 @@ class Inicio extends Component
 
 	failBusqueda(newData)
 	{
-		this.setState ({data : 'noData'});
+		ReactDOM.render(
+			<Error/>,document.getElementById('root')
+		)
 	}
 	
 		

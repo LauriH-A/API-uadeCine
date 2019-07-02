@@ -6,8 +6,11 @@ const urlGetContactosById="/leerContacto/idBusqueda";
 const urlInsertContacto="/insertarContacto/Contacto";
 const urlUpdateContacto='/modificarContacto/Contacto';
 const urlDeleteContacto='/borrarContacto/Contacto';
+const urlDeleteComentario='/borrarComentario/Comentario';
 const urlInsertComentario="/insertarComentario/Comentario"
-
+const urlGetComentarioById="/leerComentario/idBusqueda"
+const urlGetComentarioByIdUsuario="/leerComentario/idBusquedaa"
+const urlGetComentarioByIdUsuariosComunidad="/leerComentario/idBusquedaUsuarioComunidad"
 
 class ApiController extends Component
 {
@@ -30,11 +33,37 @@ class ApiController extends Component
           
         });
     }
-    getContactosById(data)
+
+    getComentario(okBusqueda)
+    {
+        const endpoint = `${url}${urlGetContactos}`;
+        //console.log("Buscando")
+       fetch(endpoint,{
+        method: 'GET', // or 'PUT'
+        mode: "cors",
+        headers:{ 'Content-Type': 'application/json'},
+        body: JSON.stringify() // data can be `string` or {object}!
+    }).then ((response) => {
+            
+            return response.json();
+        }).then (responseData => {
+                //console.log(responseData);
+            
+                //console.log("Recibi datos");
+                okBusqueda(responseData);
+                
+          
+          
+          
+        });
+    }
+
+    getContactosById(data,okLogin,errorLogin)
     {   
         const endpoint = `${url}${urlGetContactosById}`;
         
-        //console.log("Buscando")
+        console.log("funcion",errorLogin)
+        console.log("funcionok",okLogin)
         console.log(data);
        fetch(endpoint,{
             method: 'POST', // or 'PUT'
@@ -46,8 +75,38 @@ class ApiController extends Component
             
             return response.json();
         }).then (responseData => {
-            console.log(responseData)
+            if(responseData.length===0)
+            {
+                errorLogin();
+            }
+            else
+            {
+                console.log("data",data)
+                okLogin(data.idUsuario);
+            }
+            return responseData
             
+        })
+        ;
+    }
+    getComentarioById(data,okComentario)
+    {   
+        const endpoint = `${url}${urlGetComentarioById}`;
+        
+        
+        console.log(data);
+       fetch(endpoint,{
+            method: 'POST', // or 'PUT'
+            mode: "cors",
+            headers:{ 'Content-Type': 'application/json'},
+            body: JSON.stringify(data) // data can be `string` or {object}!
+        })
+        .then ((response) => {
+            
+            return response.json();
+        }).then((responseData)=>{
+            
+            okComentario(responseData)
         })
         ;
 
@@ -62,7 +121,61 @@ class ApiController extends Component
         
         
     }
-    insertContacto(data)
+
+    getComentarioByIdUsuario(data,okComentario)
+    {   
+        const endpoint = `${url}${urlGetComentarioByIdUsuario}`;
+        
+        
+        console.log(data);
+       fetch(endpoint,{
+            method: 'POST', // or 'PUT'
+            mode: "cors",
+            headers:{ 'Content-Type': 'application/json'},
+            body: JSON.stringify(data) // data can be `string` or {object}!
+        })
+        .then ((response) => {
+            
+            return response.json();
+        }).then((responseData)=>{
+            
+            okComentario(responseData)
+        })
+        ;
+    }
+    getComentarioByIdUsuariosComunidad(data,okComentario)
+    {   
+        const endpoint = `${url}${urlGetComentarioByIdUsuariosComunidad}`;
+        
+        
+        console.log(data);
+       fetch(endpoint,{
+            method: 'POST', // or 'PUT'
+            mode: "cors",
+            headers:{ 'Content-Type': 'application/json'},
+            body: JSON.stringify(data) // data can be `string` or {object}!
+        })
+        .then ((response) => {
+            
+            return response.json();
+        }).then((responseData)=>{
+            
+            okComentario(responseData)
+        })
+        ;
+    }
+        
+
+
+        
+       
+        
+        
+        
+        
+        
+    
+    insertContacto(data,okInserto,yaExiste)
     {
         console.log("guardo contacto",data);
         
@@ -78,6 +191,12 @@ class ApiController extends Component
             console.log("response");
             console.log(response);
             return response.json();
+        }).then(err=>{
+            if(err==='ya existe el usuario'){
+                yaExiste();
+            }else{
+                okInserto();
+            }
         })
         
     }
@@ -136,6 +255,28 @@ class ApiController extends Component
             console.log("response");
             console.log(response);
             return response.json();
+        })
+        
+    }
+
+    deleteComentario(data)
+    {
+       
+        
+        
+        const endpoint = `${url}${urlDeleteComentario}`;
+        console.log("Guardando");
+            fetch (endpoint,{
+            method:'DELETE',
+            mode:"cors",
+            headers:{'Content-Type': 'application/json'},
+            body:JSON.stringify(data)
+        }).then ((response) => {
+            console.log("response", response);
+            
+            
+        }).then((responseData)=>{
+            console.log(responseData)
         })
         
     }

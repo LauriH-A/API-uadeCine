@@ -33,11 +33,11 @@ class BotonRegisto extends Component{
           contraseña : this.state.contraseña,
           
       };
-      ApiController.insertContacto(data);
-      e.preventDefault();
-      alert("Te has registrado con exito...")    
+      ApiController.insertContacto(data,this.okInserto.bind(this),this.yaExiste.bind(this));
+      
+         
       this.setState({
-            open:false,
+            
             nombre:"",
             idUsuario:"",
             dni:"",
@@ -45,10 +45,16 @@ class BotonRegisto extends Component{
             mail:"",
             contraseña:""
       })
-        
-      
-      
+      e.preventDefault();
     }
+    okInserto=()=>{
+      alert("Te has registrado con exito")
+    }
+    yaExiste=()=>{
+      alert('Ya existe el usuario!')
+    }
+      
+    
     handleClickOpen = () => {
         this.setState({ open: true });
       };

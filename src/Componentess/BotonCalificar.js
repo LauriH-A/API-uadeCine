@@ -21,8 +21,9 @@ class BotonCalificar extends Component{
     
     guardar=(e)=>{
       console.log("nombre",this.state.nombre);
+      console.log("usuario",localStorage.getItem('usuarioLogueado'))
       let data = {
-          idUsuario:"Silvina18",
+          idUsuario:localStorage.getItem('usuarioLogueado'),
           comentario : this.state.comentario,
           calificacion : this.state.calificacion,
           idPelicula : this.props.pelicula

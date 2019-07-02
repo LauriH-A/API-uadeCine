@@ -40,8 +40,8 @@ function GrillaPeliculas(props) {
   console.log("props",props);
   
    //console.log("tileDAta", tileData); 
-   const tileData = props.grilla;
-  
+   const tileData =props.grilla;
+  console.log(tileData)
   
   
    return (

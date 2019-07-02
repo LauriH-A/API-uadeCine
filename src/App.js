@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Navegador from './Componentess/Navegador';
+import Logins from './Componentess/login';
 
 
 
